@@ -1,0 +1,31 @@
+<mat-card class="mat-card-color">
+    <mat-card-header>
+        <mat-card-title-group>
+            <mat-card-title><b>Nom :</b> {{forfait?.nom}}</mat-card-title>
+            <mat-card-title><b> Description :</b> {{forfait?.description}}</mat-card-title>
+            <mat-card-title><b> Code :</b> {{forfait?.code}}</mat-card-title>
+            <mat-card-title><b> Catégorie :</b> {{forfait?.categories}}</mat-card-title>
+            <mat-card-title><b> Établissement :</b></mat-card-title>
+                <mat-card-subtitle><b>Nom de l'Établissement :</b> {{forfait?.etablissement?.nom_etablissement}}</mat-card-subtitle>
+                <mat-card-subtitle><b>Coordonnées :</b></mat-card-subtitle>
+                <mat-card-subtitle><b>Adresse :</b> {{forfait?.etablissement?.coordonnees?.adresse}}</mat-card-subtitle>
+                <mat-card-subtitle><b>Ville :</b> {{forfait?.etablissement?.coordonnees?.ville}}</mat-card-subtitle>
+                <mat-card-subtitle><b>Téléphone :</b> {{forfait?.etablissement?.coordonnees?.telephone}}</mat-card-subtitle>
+                <mat-card-subtitle><b>Courriel :</b> {{forfait?.etablissement?.coordonnees?.courriel}}</mat-card-subtitle>
+                <mat-card-subtitle><b>Site Web :</b> {{forfait?.etablissement?.coordonnees?.site_web}}</mat-card-subtitle>
+                <mat-card-subtitle><b>Description :</b> {{forfait?.etablissement?.description_etablissement}}</mat-card-subtitle>
+            <mat-card-title><b>Date de Début :</b> {{forfait?.date_debut}}</mat-card-title>
+            <mat-card-title><b>Date de Fin :</b> {{forfait?.date_fin}}</mat-card-title>
+            <mat-card-title><app-prix [prix]="forfait?.prix" [nouveau_prix]="forfait?.nouveau_prix" class="prix"></app-prix></mat-card-title>
+            <mat-card-title><b>Avis :</b></mat-card-title>
+                <mat-card-subtitle><b>Note :</b> {{forfait?.avis}}</mat-card-subtitle>
+                <mat-card-subtitle><b>Commentaires :</b> {{forfait?.avis}}</mat-card-subtitle>
+        </mat-card-title-group>
+    </mat-card-header>
+</mat-card>
+
+<mat-card-title></mat-card-title>
+
+<!-- <app-etablissement [nom_etablissement]="forfait?.etablissement?.nom_etablissement" 
+[adresse]="forfait?.etablissement?.coordonnees?.adresse"></app-etablissement> -->
+<!-- <p><b>Établissement :</b> {{forfait?.etablissement?.coordonnees?.adresse}} {{forfait?.etablissement?.coordonnees?.ville}}</p>  -->

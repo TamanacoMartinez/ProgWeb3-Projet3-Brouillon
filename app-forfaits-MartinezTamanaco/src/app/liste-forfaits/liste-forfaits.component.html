@@ -1,0 +1,31 @@
+<h1>Liste des forfaits</h1>
+
+
+<div class="flex-container" *ngIf="premium===true">   
+    <!-- <ng-template *ngIf="premium===true"> -->
+        <app-petit-forfait *ngFor="let forfait of forfaits" [forfait]="forfait"></app-petit-forfait>
+    <!-- </ng-template> -->
+
+</div>
+
+
+<!-- <mat-list>
+    <ng-container *ngFor="let forfait of forfaits" >
+        <mat-list-item> <app-forfait-complet [forfait]="forfait"></app-forfait-complet></mat-list-item>
+        <mat-divider></mat-divider>
+    </ng-container>
+</mat-list>   -->
+
+
+
+<!-- <mat-list>
+    <mat-list-item><app-forfait-complet *ngFor="let forfait of forfaits" [forfait]="forfait"></app-forfait-complet></mat-list-item>
+</mat-list> -->
+
+<ng-container>
+    <app-forfait-complet *ngFor="let forfait of forfaits" [forfait]="forfait"></app-forfait-complet>
+</ng-container>
+
+
+
+

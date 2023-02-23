@@ -1,0 +1,55 @@
+/* :host {
+  display: block;
+  background-color: rgb(18, 134, 201);
+} */
+
+div {
+  background-color: rgb(209, 209, 191);
+}
+
+h2 {
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+b {
+    color: blue;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  } 
+  
+.example-full-width {
+    width: 100%;
+  }
+
+  .example-section {
+    margin: 12px 0;
+  } 
+  
+  .example-margin {
+    margin: 0 12px;
+  } 
+  
+  ul {
+    list-style-type: none;
+    margin-top: 4px;
+  }
+
+  table {
+    width: 100%;
+    }
+
+    .flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    }
+    
+    .ml-auto {
+    margin-left: auto;
+    }

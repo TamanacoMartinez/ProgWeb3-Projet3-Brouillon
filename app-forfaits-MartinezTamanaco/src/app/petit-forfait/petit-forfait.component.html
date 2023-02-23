@@ -1,0 +1,10 @@
+<mat-card class="mat-card-color">
+    <mat-card-header><mat-card-title><b>Petit Forfait</b></mat-card-title></mat-card-header>
+    <mat-card-content>
+<p><b>Nom du forfait :</b> {{forfait?.nom}}</p> 
+<p><b>Nom de l’établissement :</b> {{forfait?.etablissement?.nom_etablissement}}</p> 
+<p><b>Date de Début :</b> {{forfait?.date_debut}}</p> 
+<p><b>Date de Fin :</b> {{forfait?.date_fin}}</p> 
+<span><app-prix [prix]="forfait?.prix" [nouveau_prix]="forfait?.nouveau_prix"></app-prix></span>
+    </mat-card-content>
+</mat-card>

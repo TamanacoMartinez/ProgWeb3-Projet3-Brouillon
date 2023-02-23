@@ -1,0 +1,12 @@
+.prix_barre {
+    text-decoration: line-through;
+    text-decoration-color: red;
+    /* font-weight: bolder; */
+    
+}
+
+.nouveau_prix {
+    color: red;
+    font-weight: bolder;
+}
+

@@ -1,0 +1,65 @@
+<h2><b>Formulaire Contact :</b></h2>
+
+<div class="flex-container">
+
+<form action="">
+    <h3>Prénom</h3>
+    <mat-form-field class="example-full-width">
+        <mat-label>Prénom :</mat-label>
+        <input matInput placeholder="Prénom" required>
+    </mat-form-field>
+    <h3>Nom</h3>
+    <mat-form-field class="example-full-width">
+        <mat-label>Nom :</mat-label>
+        <input matInput placeholder="Nom" required>
+    </mat-form-field>
+</form>
+<form action="">
+    <h3>Courriel</h3>
+    <mat-form-field class="example-full-width">
+        <mat-label>Courriel :</mat-label>
+        <input matInput placeholder="Courriel" type="email" required>
+    </mat-form-field>
+    <h3>Téléphone</h3>
+    <mat-form-field class="example-full-width">
+        <mat-label>Téléphone :</mat-label>
+        <input matInput placeholder="Courriel" type="tel">
+    </mat-form-field>
+</form> 
+<form action="">
+    <h3>Préférence de communication</h3>
+    <mat-radio-group aria-label="Select an option">
+        <mat-radio-button value="1">Courriel</mat-radio-button><br>
+        <mat-radio-button value="2">Téléphone</mat-radio-button>
+    </mat-radio-group> 
+    <h3>Message</h3>
+    <mat-form-field class="example-full-width">
+        <mat-label>Message :</mat-label>
+        <textarea matInput placeholder="Message" required></textarea>
+    </mat-form-field>
+</form>
+<form>
+    <mat-form-field appearance="fill">
+        <mat-label>Réponse attendue au plus tard le</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <h3>Comment avez-vous entendu parler de nous ?</h3>
+    <mat-form-field appearance="fill">
+    <mat-label>Comment avez-vous entendu parler de nous ?</mat-label>
+    <select matNativeControl required>
+        <option value="internet">Internet</option>
+        <option value="radio">Radio</option>
+        <option value="TV">TV</option>
+    </select>
+    </mat-form-field>
+</form>
+<form action="">
+    <mat-slide-toggle>Inscription à l’infolettre</mat-slide-toggle>
+</form>
+
+
+
+</div>

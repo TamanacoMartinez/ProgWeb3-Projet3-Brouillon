@@ -1,0 +1,26 @@
+:host {
+    display: block;
+    background-color: rgb(197, 229, 248);
+}
+
+
+.mat-card-color {
+    background-color: rgb(209, 209, 191);
+    color: black;
+}
+
+.mat-card-title, .mat-card-subtitle {
+    padding: 0.2rem;
+}
+
+b {
+    color: blue;
+}
+
+.prix {
+    color: blue;
+}
+
+/* b {
+    color: rgb(189, 19, 19);
+} */
