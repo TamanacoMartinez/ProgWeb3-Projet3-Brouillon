@@ -6,6 +6,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { NgForm } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { FormulaireForfaitComponent } from '../formulaire-forfait/formulaire-forfait.component';
 
 @Component({
   selector: 'app-formulaire-gestion-forfaits',
@@ -22,7 +24,9 @@ export class FormulaireGestionForfaitsComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private forfaitService: ForfaitService, private _snackBar: MatSnackBar) {}
+  constructor(private forfaitService: ForfaitService, 
+              private _snackBar: MatSnackBar,
+              public dialog: MatDialog){}
   
     
   ngOnInit(): void {
@@ -59,6 +63,25 @@ export class FormulaireGestionForfaitsComponent implements OnInit {
       }
     );
   }
+
+  openDialog(forfait?: Forfait) {
+      console.log(forfait);
+      const dialogRef = this.dialog.open(FormulaireForfaitComponent, {
+      data: forfait,
+    });
+      dialogRef.afterClosed().subscribe(result => {
+      console.log('Le dialog du formulaire de héro a été fermé');
+      this.getForfaits();
+    });
+  }
+
+  // forfaitAjoute() {
+  //   this.getForfaits();
+  //   this._snackBar.open("Forfait ajouté !", undefined, {
+  //     duration: 2000
+  //   });
+  // }
+
 
   ngAfterViewInit() {
     

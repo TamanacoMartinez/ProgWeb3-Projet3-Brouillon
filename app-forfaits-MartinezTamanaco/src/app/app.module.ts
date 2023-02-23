@@ -39,9 +39,11 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 import { SnackbarComponent } from './snackbar/snackbar.component';
+import { FormulaireForfaitComponent } from './formulaire-forfait/formulaire-forfait.component';
 
 
 @NgModule({
@@ -56,6 +58,7 @@ import { SnackbarComponent } from './snackbar/snackbar.component';
     FormulaireAvisComponent,
     FormulaireContactComponent,
     SnackbarComponent,
+    FormulaireForfaitComponent,
   ],
   imports: [
     BrowserModule,
@@ -80,6 +83,7 @@ import { SnackbarComponent } from './snackbar/snackbar.component';
     MatSnackBarModule,
     MatTableModule,
     MatPaginatorModule,
+    MatDialogModule,
     HttpClientModule
   ],
   providers: [ForfaitService],
