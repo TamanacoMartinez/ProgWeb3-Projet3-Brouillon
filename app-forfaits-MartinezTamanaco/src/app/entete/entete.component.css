@@ -1,0 +1,10 @@
+:host {
+    display: block;
+    /* background-color: rgb(240, 255, 255); */
+    background-color: black;
+    font-weight: bolder;
+    }
+
+a {
+    color: rgb(202, 25, 25);
+}

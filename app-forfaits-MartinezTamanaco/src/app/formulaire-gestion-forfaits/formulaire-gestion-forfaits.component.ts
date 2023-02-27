@@ -18,8 +18,6 @@ export class FormulaireGestionForfaitsComponent implements OnInit {
   dataSourceForfaits: MatTableDataSource<Forfait> = new MatTableDataSource();
   columnsToDisplay = ['nom', 'telephone', 'courriel', 'code', 'date_debut', 'date_fin', 'prix', 'actions'];
 
-  // newForfait: Forfait = {nom: '', description: '', code: '', categories:[], etablissement:{}, date_debut: '', date_fin: '', prix: 0, nouveau_prix: 0, premium: false, avis:[]};
-  newForfait: Forfait = {nom:'', description: '', code: '', prix: 0};
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -43,16 +41,6 @@ export class FormulaireGestionForfaitsComponent implements OnInit {
     );
   }
   
-  addForfait(forfaitFormAjout: NgForm) {
-    if (forfaitFormAjout.valid) {
-    this.forfaitService.addForfait(this.newForfait).subscribe(
-    _ => {
-    forfaitFormAjout.resetForm();
-    this.getForfaits(); }
-      );
-    }
-  }
-
   deleteForfait(id: number) {
     this.forfaitService.deleteForfait(id).subscribe(
       _ => {
@@ -70,17 +58,10 @@ export class FormulaireGestionForfaitsComponent implements OnInit {
       data: forfait,
     });
       dialogRef.afterClosed().subscribe(result => {
-      console.log('Le dialog du formulaire de héro a été fermé');
+      console.log('Le dialog du formulaire de forfait a été fermé');
       this.getForfaits();
     });
   }
-
-  // forfaitAjoute() {
-  //   this.getForfaits();
-  //   this._snackBar.open("Forfait ajouté !", undefined, {
-  //     duration: 2000
-  //   });
-  // }
 
 
   ngAfterViewInit() {

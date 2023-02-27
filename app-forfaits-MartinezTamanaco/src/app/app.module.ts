@@ -41,9 +41,17 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatDialogModule} from '@angular/material/dialog';
 
+import { NgChartsModule } from 'ng2-charts';
 
 import { SnackbarComponent } from './snackbar/snackbar.component';
 import { FormulaireForfaitComponent } from './formulaire-forfait/formulaire-forfait.component';
+import { EnteteComponent } from './entete/entete.component';
+import { AProposComponent } from './a-propos/a-propos.component';
+import { PiedPageComponent } from './pied-page/pied-page.component';
+import { AccueilComponent } from './accueil/accueil.component';
+import { Graphique1Component } from './graphique1/graphique1.component';
+import { Graphique2Component } from './graphique2/graphique2.component';
+import { GraphiquesComponent } from './graphiques/graphiques.component';
 
 
 @NgModule({
@@ -59,6 +67,13 @@ import { FormulaireForfaitComponent } from './formulaire-forfait/formulaire-forf
     FormulaireContactComponent,
     SnackbarComponent,
     FormulaireForfaitComponent,
+    EnteteComponent,
+    AProposComponent,
+    PiedPageComponent,
+    AccueilComponent,
+    Graphique1Component,
+    Graphique2Component,
+    GraphiquesComponent,
   ],
   imports: [
     BrowserModule,
@@ -84,6 +99,7 @@ import { FormulaireForfaitComponent } from './formulaire-forfait/formulaire-forf
     MatTableModule,
     MatPaginatorModule,
     MatDialogModule,
+    NgChartsModule,
     HttpClientModule
   ],
   providers: [ForfaitService],

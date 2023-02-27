@@ -5,20 +5,20 @@
       <mat-form-field class="example-full-width">
         <mat-label>Nom du forfait :</mat-label>
         <input matInput placeholder="Ex. Nom du forfait 1"  minlength="5" maxlength="50" name="nom" required
-         [(ngModel)]="newForfait.nom" #nom="ngModel" (keyup.enter)="addForfait(forfaitFormAjout)">
+         [(ngModel)]="forfait.nom" #nom="ngModel" (keyup.enter)="addForfait(forfaitFormAjout)">
       </mat-form-field>
     
       <mat-form-field class="example-full-width">
         <mat-label>Description :</mat-label>
         <textarea matInput placeholder="Ex. Description du forfait 1" minlength="5" maxlength="100" name="description" required
-          [(ngModel)]="newForfait.description" #description="ngModel" (keyup.enter)="addForfait(forfaitFormAjout)">
+          [(ngModel)]="forfait.description" #description="ngModel" (keyup.enter)="addForfait(forfaitFormAjout)">
         </textarea>
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
         <mat-label>Code :</mat-label>
         <input matInput placeholder="Ex. ABC001" minlength="6" maxlength="6" name="code" required
-         [(ngModel)]="newForfait.code" #code="ngModel" (keyup.enter)="addForfait(forfaitFormAjout)">
+         [(ngModel)]="forfait.code" #code="ngModel" (keyup.enter)="addForfait(forfaitFormAjout)">
       </mat-form-field>
 
       
@@ -26,100 +26,109 @@
         (click)="addForfait(forfaitFormAjout)">
         <mat-icon>add</mat-icon>
       </button> -->
-  <!-- </form>  -->
 
-  <!-- <form class="example-form" #forfaitFormAjout="ngForm"> -->
       <h3><b>Établissement :</b></h3>
       <mat-form-field class="example-full-width">
         <mat-label>Nom de l'établissement :</mat-label>
-        <input matInput placeholder="Nom de l'établissement" name="nom_etablissement"> 
+        <input matInput placeholder="Nom de l'établissement" name="nom_etablissement"
+         [(ngModel)]="forfait.etablissement.nom_etablissement" #nom_etablissement="ngModel"> 
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
           <mat-label>Description :</mat-label>
-          <textarea matInput placeholder="Description" name="description_etablissement">
+          <textarea matInput placeholder="Description" name="description_etablissement"
+           [(ngModel)]="forfait.etablissement.description_etablissement" #description_etablissement="ngModel">
           </textarea>
       </mat-form-field>  
-  <!-- </form>  -->
+  
+      <h3><b>Coordonnées :</b></h3>
+      <mat-form-field class="example-full-width">
+        <mat-label>Adresse :</mat-label>
+        <input matInput placeholder="Adresse" name="adresse"
+        [(ngModel)]="forfait.etablissement.coordonnees.adresse" #adresse="ngModel"> 
+      </mat-form-field>
+      
+      <mat-form-field class="example-full-width">
+        <mat-label>Ville :</mat-label>
+        <input matInput placeholder="Ville" name="ville"
+        [(ngModel)]="forfait.etablissement.coordonnees.ville" #ville="ngModel">
+      </mat-form-field>
+      
+      <mat-form-field class="example-full-width">
+        <mat-label>Téléphone :</mat-label>
+        <input matInput placeholder="Téléphone" type="tel" name="telephone"
+        [(ngModel)]="forfait.etablissement.coordonnees.telephone" #telephone="ngModel">
+      </mat-form-field>
+      
+      <mat-form-field class="example-full-width">
+        <mat-label>Courriel :</mat-label>
+        <!-- <input matInput placeholder="Courriel" type="email" name="courriel" pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" -->
+        <input matInput placeholder="Courriel" type="email" name="courriel" 
+         [(ngModel)]="forfait.etablissement.coordonnees.courriel" #courriel="ngModel">
+      </mat-form-field>
+      
+      <mat-form-field class="example-full-width">
+        <mat-label>Site Web :</mat-label>
+        <input matInput placeholder="Site Web" name="site_web"
+         [(ngModel)]="forfait.etablissement.coordonnees.site_web" #site_web="ngModel">
+      </mat-form-field>
 
-  <!-- <form class="example-form" #forfaitFormAjout="ngForm"> -->
-    <h3><b>Coordonnées :</b></h3>
-    <mat-form-field class="example-full-width">
-      <mat-label>Adresse :</mat-label>
-      <input matInput placeholder="Adresse" name="adresse"> 
-    </mat-form-field>
-    
-    <mat-form-field class="example-full-width">
-      <mat-label>Ville :</mat-label>
-      <input matInput placeholder="Ville" name="ville">
-    </mat-form-field>
-    
-    <mat-form-field class="example-full-width">
-      <mat-label>Téléphone :</mat-label>
-      <input matInput placeholder="Téléphone" type="tel" name="telephone">
-    </mat-form-field>
-    
-    <mat-form-field class="example-full-width">
-      <mat-label>Courriel :</mat-label>
-      <input matInput placeholder="Courriel" type="email" name="courriel" pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/">
-    </mat-form-field>
-    
-    <mat-form-field class="example-full-width">
-      <mat-label>Site Web :</mat-label>
-      <input matInput placeholder="Site Web" name="site_web">
-    </mat-form-field>
-  <!-- </form> -->
+      <h3><b>Date :</b></h3>
+      <mat-form-field appearance="fill">
+        <mat-label>Date de début : / </mat-label>
+        <mat-label>Date de fin :</mat-label>
+        <mat-date-range-input [rangePicker]="picker">
+          <input matStartDate placeholder="Date de début" name="date_debut"
+           [(ngModel)]="forfait.date_debut" #date_debut="ngModel" (keyup.enter)="addForfait(forfaitFormAjout)">
+          <input matEndDate placeholder="Date de fin" name="date_fin"
+           [(ngModel)]="forfait.date_fin" #date_fin="ngModel" (keyup.enter)="addForfait(forfaitFormAjout)">
+        </mat-date-range-input>
+        <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+      </mat-form-field>
+  
+    <section class="example-section">
+      <mat-checkbox class="example-margin" name="premium"
+       [(ngModel)]="forfait.premium" #premium="ngModel" (keyup.enter)="addForfait(forfaitFormAjout)">Premium
+      </mat-checkbox>
+    </section>
 
-  <!-- <form class="example-form" #forfaitFormAjout="ngForm"> -->
-    <h3><b>Date :</b></h3>
-    <mat-form-field appearance="fill">
-      <mat-label>Date de début : / </mat-label>
-      <mat-label>Date de fin :</mat-label>
-      <mat-date-range-input [rangePicker]="picker">
-        <input matStartDate placeholder="Date de début" name="date_debut"
-         [(ngModel)]="newForfait.date_debut" #date_debut="ngModel" (keyup.enter)="addForfait(forfaitFormAjout)">
-        <input matEndDate placeholder="Date de fin" name="date_fin"
-         [(ngModel)]="newForfait.date_fin" #date_fin="ngModel" (keyup.enter)="addForfait(forfaitFormAjout)">
-      </mat-date-range-input>
-      <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
-      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-date-range-picker #picker></mat-date-range-picker>
-    </mat-form-field>
- 
-  <section class="example-section">
-    <mat-checkbox class="example-margin" name="premium">Premium</mat-checkbox>
-  </section>
-<!-- </form> -->
+      <h3><b>Prix :</b></h3>
+      <mat-form-field class="example-full-width">
+        <mat-label>Prix</mat-label>
+        <input matInput placeholder="00" type="number" min="0" value="00.00" step=".01"  name="prix" required  
+         [(ngModel)]="forfait.prix" #prix="ngModel" (keyup.enter)="addForfait(forfaitFormAjout)">
+      </mat-form-field><br>
+      <mat-form-field class="example-full-width">
+        <mat-label>Nouveau prix</mat-label>
+        <input matInput placeholder="00" type="number" min="0" value="00.00" step=".01" name="nouveau_prix" 
+         [(ngModel)]="forfait.nouveau_prix" #nouveau_prix="ngModel" (keyup.enter)="addForfait(forfaitFormAjout)">  
+      </mat-form-field>
 
-  <!-- <form action="" #forfaitFormAjout="ngForm"> -->
-    <h3><b>Prix :</b></h3>
-    <mat-form-field class="example-full-width">
-      <mat-label>Prix</mat-label>
-      <input matInput placeholder="00" type="number" min="0" value="00.00" step=".01"  name="prix" required  
-       [(ngModel)]="newForfait.prix" #prix="ngModel" (keyup.enter)="addForfait(forfaitFormAjout)">
-    </mat-form-field><br>
-    <mat-form-field class="example-full-width">
-      <mat-label>Nouveau prix</mat-label>
-      <input matInput placeholder="00" type="number" min="0" value="00.00" step=".01" name="nouveau_prix" 
-       [(ngModel)]="newForfait.nouveau_prix" #nouveau_prix="ngModel" (keyup.enter)="addForfait(forfaitFormAjout)">  
-    </mat-form-field>
-  <!-- </form> -->
+    <app-formulaire-avis></app-formulaire-avis>
 
-  <app-formulaire-avis></app-formulaire-avis>
+    <!-- <form action="" #forfaitFormAjout="ngForm"> -->
+      <!-- <button mat-fab color="primary" aria-label="Ajouter" [disabled]="!forfaitFormAjout.form.valid"
+      (click)="addForfait(forfaitFormAjout)">
+        <mat-icon>add</mat-icon>
+      </button> -->
 
-  <!-- <form action="" #forfaitFormAjout="ngForm"> -->
-    <!-- <button mat-fab color="primary" aria-label="Ajouter" [disabled]="!forfaitFormAjout.form.valid"
-    (click)="addForfait(forfaitFormAjout)">
-      <mat-icon>add</mat-icon>
-    </button> -->
-
-    <div>
-      <button mat-button mat-aria-label="Annuler" (click)="annuler()">
-      Annuler
-      </button>
-      <button mat-button mat-aria-label="Ajouter" [disabled]="!forfaitFormAjout.form.valid" (click)="addForfait(forfaitFormAjout)">
-      Créer
-      </button>
+      <div>
+        <button *ngIf="forfait.id; else boutonAjout" mat-button mat-aria-label="Modifier"
+          [disabled]="!forfaitFormAjout.form.valid" (click)="updateForfait(forfaitFormAjout)">Modifier</button>
+          <ng-template #boutonAjout>
+            <button mat-button mat-aria-label="Ajouter"
+            [disabled]="!forfaitFormAjout.form.valid" (click)="addForfait(forfaitFormAjout)">
+            Créer
+            </button>
+          </ng-template>
+        <button mat-button mat-aria-label="Annuler" (click)="annuler()">
+          Annuler
+        </button>
+        <!-- <button mat-button mat-aria-label="Ajouter" [disabled]="!forfaitFormAjout.form.valid" (click)="addForfait(forfaitFormAjout)">
+          Créer
+        </button> -->
       </div>
   </form>
 

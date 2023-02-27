@@ -12,9 +12,12 @@ import { Formulaire } from '../formulaire';
   styleUrls: ['./liste-forfaits.component.css']
 })
 export class ListeForfaitsComponent implements OnInit {
+  
+  forfaits: Forfait[] = [];
+
   @Input() premium? = true;
 
-  forfaits: Forfait[] = [];
+
   
   // forfaits = FORFAITS
 
